@@ -1,0 +1,42 @@
+<template>
+    <lightning-card title="Send Case Email">
+        <div class="slds-p-around_medium">
+
+            <lightning-combobox
+                name="fromAddress"
+                label="From Address"
+                value={selectedFrom}
+                placeholder="Select From Address"
+                options={fromOptions}
+                onchange={handleFromChange}>
+            </lightning-combobox>
+
+            <lightning-input
+                label="To Address"
+                type="email"
+                value={toAddress}
+                onchange={handleToChange}>
+            </lightning-input>
+
+            <lightning-input
+                label="Subject"
+                type="text"
+                value={subject}
+                onchange={handleSubjectChange}>
+            </lightning-input>
+
+            <lightning-input-rich-text
+                label="Mail Body"
+                value={body}
+                onchange={handleBodyChange}>
+            </lightning-input-rich-text>
+
+            <lightning-button
+                variant="brand"
+                class="slds-m-top_medium"
+                label="Send Email"
+                onclick={sendEmailHandler}>
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

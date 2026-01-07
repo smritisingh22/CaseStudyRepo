@@ -1,0 +1,28 @@
+<aura:component implements="force:appHostable,force:hasRecordId,flexipage:availableForRecordHome,flexipage:availableForAllPageTypes" access="global" controller="AccountRelatedContact">
+
+  <!-- Record ID from the current record page -->
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="contactList" type="Contact[]"/>
+    <aura:attribute name="columns" type="List"/>
+
+    <lightning:card title="Account Related Contacts" iconName="standard:contact">
+        <aura:set attribute="actions">
+            <lightning:buttonIcon iconName="utility:refresh"
+                                  alternativeText="Refresh"
+                                  onclick="{!c.doInit}"/>
+        </aura:set>
+
+        <lightning:datatable keyField="Id"
+                             data="{!v.contactList}"
+                             columns="{!v.columns}"
+                             hideCheckboxColumn="true"
+                            />
+
+        <aura:if isTrue="{! or(v.contactList == null, v.contactList.length == 0) }">
+        <div class="slds-p-around_medium slds-text-color_weak">
+            No contacts found for this Account.
+        </div>
+    </aura:if>
+    </lightning:card>
+
+</aura:component>

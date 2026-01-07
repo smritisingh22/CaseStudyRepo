@@ -1,0 +1,24 @@
+<template>
+  <lightning-card title="Text Formatter">
+     <div class="slds-m-around_medium ">
+        <p class={styleClass}>Try Changing My Text Style and Color!!!</p>
+     </div>
+    <div class="slds-m-around_medium">
+      <lightning-button 
+        variant="brand"
+        label="Format 1" 
+        onclick={handleClickFirst} 
+        class="slds-m-around_medium"></lightning-button>
+        <lightning-button 
+        variant="brand"
+        label="Format 2" 
+        onclick={handleClickSecond} 
+        class="slds-m-around_medium"></lightning-button>
+        <lightning-button 
+        variant="brand"
+        label="Format 3" 
+        onclick={handleClickThird} 
+        class="slds-m-around_medium"></lightning-button>
+    </div>
+  </lightning-card>  
+</template>

@@ -1,0 +1,30 @@
+<template>
+    <lightning-card  title="Receipt List" >
+        <div class="slds-m-around_medium">
+            <template if:true={hasData}>
+                
+           <lightning-datatable
+            data={receipts}
+            columns={columns} 
+            key-field="Id"
+            hide-checkbox-column="true">
+           </lightning-datatable>
+           <br/><!--
+           <template for:each={receipts} for:item="receipt">
+            <div class="slds-box slds-m-bottom_small" key={receipt.Id}>
+            <strong>Receipt Number::</strong> {receipt.Name} <br/>
+            <strong> Amount::</strong> {receipt.Amount__c} <br/>
+            <strong> Amount Paid Date::</strong> {receipt.Amount_Paid_Date__c} <br/>
+            <strong> Mode of Pay::</strong> {receipt.Mode_of_Pay__c} <br/>
+            <strong> Contact Name::</strong> {receipt.contactName}
+            <br/><br/>
+            </div>
+            
+        </template>-->
+           </template>
+           <template if:false={hasData}>
+            <p>No Records of Receipts are yet present for this contact.</p>
+           </template>
+        </div>
+    </lightning-card>
+</template>

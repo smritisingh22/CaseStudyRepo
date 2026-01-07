@@ -1,0 +1,11 @@
+<aura:component implements="force:lightningQuickAction,force:hasRecordId,force:hasSObjectName" controller="CloneCaseController" access="global">
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="loading" type="Boolean" default="false"/>
+
+    <lightning:button 
+        label="Clone Case" 
+        onclick="{!c.cloneCase}" 
+        variant="brand" 
+        disabled="{!v.loading}"/>
+
+</aura:component>

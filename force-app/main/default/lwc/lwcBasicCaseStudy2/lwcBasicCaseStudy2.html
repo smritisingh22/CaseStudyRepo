@@ -1,0 +1,47 @@
+<template>
+    <lightning-card title="Simple Calculator" icon-name="custom:custom24">
+        <div class="slds-m-around_medium slds-box">
+            <!--User input and result section-->
+            <div class="slds-grid slds-gutters slds-wrap">
+                <div class="slds-col slds-size_1-of-3">
+                    <lightning-input type="number" label="First Number" value={firstNumber} onchange={handleFirstNumberChange}></lightning-input>
+                </div>
+                <div class="slds-col slds-size_1-of-3">
+                    <lightning-input type="number" label="Second Number" value={secondNumber} onchange={handleSecondNumberChange}></lightning-input>
+                </div>
+                <div class="slds-col slds-size_1-of-3">
+                    <lightning-input type="number" label="Result" value={result} disabled></lightning-input>
+                </div>
+            </div>
+            <!--Operation buttons section  -->
+            <div class="slds-grid slds-gutters slds-wrap ">
+                <div class="slds-col slds-size_2-of-4 ">
+                    <div class="slds-p-around_x-small">
+                        <lightning-button label="Add" class="slds-button_stretch"  onclick={handleAdd} variant="brand"></lightning-button>
+                    </div>
+                    
+                </div> 
+                <div class="slds-col slds-size_2-of-4 ">
+                    <div class="slds-p-around_x-small">
+                        <lightning-button label="Subtract" class="slds-button_stretch" onclick={handleSubtract} variant="brand"></lightning-button> 
+                    </div>
+                    
+                </div>
+                <div class="slds-col slds-size_2-of-4 slds-m-top_medium slds-button_stretch">
+                    <div class="slds-p-around_x-small">
+                        <lightning-button label="Multiply" class="slds-button_stretch"  onclick={handleMultiply} variant="brand"></lightning-button>
+                    </div>
+                    
+                </div>
+                <div class="slds-col slds-size_2-of-4 slds-m-top_medium slds-button_stretch">
+                    <div class="slds-p-around_x-small">
+                        <lightning-button label="Divide" class="slds-button_stretch" onclick={handleDivide} variant="brand"></lightning-button>
+                    </div>
+                </div>
+
+            </div>
+            
+            
+        </div>
+    </lightning-card>
+</template>

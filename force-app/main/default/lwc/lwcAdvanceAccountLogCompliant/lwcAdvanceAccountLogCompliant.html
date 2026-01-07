@@ -1,0 +1,36 @@
+<template>
+    <lightning-card title="Complaints">
+        <div class="slds-p-around_small">
+
+            <lightning-button 
+                variant="brand" 
+                label="Log Complaint" 
+                onclick={openModal}>
+            </lightning-button>
+            <br/><br/>
+
+            <template if:true={complaints.length}>
+                <lightning-datatable 
+                    key-field="Id"  
+                    data={complaints}
+                    columns={columns}
+                    hide-checkbox-column="true">
+                </lightning-datatable>
+            </template>
+
+            <template if:false={complaints.length}>
+                <p class="slds-p-top_small">No complaints found.</p>
+            </template>
+
+        </div>
+
+        <template if:true={showModal}>
+            <c-lwc-advance-log-compliant
+                record-id={recordId}
+                onclose={closeModal}
+                onrefresh={loadData}>
+                </c-lwc-advance-log-compliant>
+            
+        </template>
+    </lightning-card>
+</template>

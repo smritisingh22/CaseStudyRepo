@@ -1,0 +1,42 @@
+<template>
+    <lightning-card title="Log Complaint">
+        <div class="slds-p-around_medium">
+
+            <lightning-combobox 
+                name="Complaint Type"
+                label="Complaint Type"
+                value={complaintType}
+                options={typeOptions}
+                onchange={handleTypeChange}
+                required>
+            </lightning-combobox>
+
+            <lightning-textarea 
+                label="Comments"
+                value={comments}
+                required
+                onchange={handleComments}>
+            </lightning-textarea>
+
+            <lightning-textarea 
+                label="Resolution"
+                value={resolution}
+                onchange={handleResolution}>
+            </lightning-textarea>
+
+            <div class="slds-m-top_medium slds-align_absolute-center">
+                <lightning-button 
+                    variant="brand"
+                    label="Submit"
+                    onclick={handleSubmit}>
+                </lightning-button>
+
+                <lightning-button 
+                    class="slds-m-left_small"
+                    label="Cancel"
+                    onclick={handleCancel}>
+                </lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

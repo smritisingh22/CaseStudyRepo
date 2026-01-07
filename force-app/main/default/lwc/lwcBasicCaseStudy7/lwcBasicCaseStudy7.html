@@ -1,0 +1,26 @@
+<template>
+  
+  <lightning-card>
+    
+    <lightning-modal-header>
+      <h2 class="slds-text-heading_medium">Create Receipt Record</h2>
+    </lightning-modal-header>
+    <lightning-modal-body>
+      <div class="slds-m-around_medium slds-grid slds-box slds-gutters slds-wrap">
+        <div class="slds-col slds-size_1-of-2">
+        <lightning-input label="Amount" type="number" value={amount} onchange={handleAmountChange}></lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+          <lightning-input label="Amount to be Paid Date" type="date" value={payDate} onchange={handleDateChange}></lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+        <lightning-combobox label="Mode of Pay" value={selectedMode} options={modeOptions} onchange={handlePayModeChange}></lightning-combobox>
+        </div>
+  
+        <div class="slds-col slds-p-top_medium slds-size_2-of-2">
+        <lightning-button  class="slds-p-top_medium slds-text-align_center" label="Create Receipt" variant="brand" onclick={handleCreateReceipt}></lightning-button>
+        </div>
+      </div>
+    </lightning-modal-body>
+  </lightning-card>
+</template>

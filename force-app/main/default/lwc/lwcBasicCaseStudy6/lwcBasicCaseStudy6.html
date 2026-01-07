@@ -1,0 +1,16 @@
+<template>
+   <lightning-card title="Account Search" icon-name="standard:account">
+        <div class="slds-m-around_medium slds-text-align_center">
+            <lightning-input label="Search Accounts" onchange={handleSearchChange}></lightning-input>
+            <lightning-button label="Search" variant="brand" onclick={handleSearch} class="slds-m-top_small" ></lightning-button>
+        
+        <template if:true={hasResults}>
+            <lightning-datatable
+                key-field="Id"
+                data={accounts}
+                columns={columns}>
+            </lightning-datatable>
+        </template>
+        </div>
+    </lightning-card> 
+</template>
